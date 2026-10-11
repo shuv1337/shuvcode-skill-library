@@ -1,0 +1,31 @@
+{
+  "name": "shuvcode-skill-library",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/shuv1337/shuvcode-skill-library.git" },
+  "homepage": "https://github.com/shuv1337/shuvcode-skill-library#readme",
+  "bugs": { "url": "https://github.com/shuv1337/shuvcode-skill-library/issues" },
+  "files": ["dist", "README.md", "LICENSE"],
+  "publishConfig": { "access": "public" },
+  "type": "module",
+  "description": "Secondary on-demand skill library for OpenCode V2: listed in /skills and loadable by mention, hidden from the system prompt",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsgo --noEmit",
+    "check": "bun run typecheck && bun test",
+    "build": "bun script/build.ts",
+    "prepack": "bun run build",
+    "prepublishOnly": "bun run check"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.0.26"
+  },
+  "devDependencies": {
+    "@tsconfig/bun": "1.0.9",
+    "@types/bun": "1.4.0",
+    "@typescript/native-preview": "7.0.0-dev.20251207.1"
+  }
+}
